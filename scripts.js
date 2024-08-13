@@ -15,6 +15,20 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
+const heroSwiper = new Swiper('.hero-slider', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    slidesPerView: 1, // Ensure only one slide is visible at a time
+});
+
 
 // Ensuring images have consistent width
 document.addEventListener('DOMContentLoaded', function() {

@@ -83,8 +83,9 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Hero section */
 .hero {
-    background: url('images/1.png') no-repeat center center/cover;
+    /*background: url('images/1.png') no-repeat center center/cover;*/
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -108,15 +109,60 @@ header nav ul li a:hover {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
 }
 
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slider .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+}
+
+.hero-slider .swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
+.hero-slider .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-slider .swiper-pagination .swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+.hero-slider .swiper-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
 .hero-content {
     background-color: rgba(108, 117, 125, 0.5);
-    position: relative;
+    position: absolute;
     z-index: 2;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     z-index: 2;
 }
+
 
 .hero h1 {
     font-size: 48px;
@@ -314,33 +360,80 @@ section {
     color: #666;
 }
 
+
+.swiper-button-next, .swiper-button-prev {
+    position: relative;
+    top: 0;  /* Adjust as needed */
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next {
+    margin-left: auto; /* Pushes the button to the right */
+    left: -5px; /* Adjust to position it from the left, if needed */
+    top: 45vh; /* Adjust this value to move the button down */
+}
+
+.swiper-button-prev {
+    margin-right: auto; /* Pushes the button to the left */
+    right: 10px; /* Adjust to position it from the right, if needed */
+    top: 38.7vh; /* Adjust this value to move the button down */
+}
+
+.swiper-pagination{
+    position: relative;
+}
+
+
 .contact {
     background-color: #fff;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    text-align: center; /* Center-align content */
-    padding-bottom: 80px;
+    text-align: center;
 }
 
 .contact-info {
     margin: 0 auto;
-    max-width: 600px; /* Adjust width as needed */
+    max-width: 600px;
 }
 
 .contact-info p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.contact-info .number-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-info .number-container a {
+    display: block;
+    margin: 5px 0;
+    color: var(--primary-100);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.contact-info .number-container a:hover {
+    color: var(--accent-100);
 }
 
 .contact-info a {
-    color: var(--primary-100); /* Use your primary color */
+    color: var(--primary-100);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: var(--accent-100); /* Use your accent color */
+    color: var(--accent-100);
 }
 
 .contact-info .social-media {
@@ -352,6 +445,12 @@ section {
 .contact-info .social-media a {
     margin: 0 10px;
     font-size: 24px;
+    color: var(--primary-100);
+    transition: color 0.3s ease;
+}
+
+.contact-info .social-media a:hover {
+    color: var(--accent-100);
 }
 
 
