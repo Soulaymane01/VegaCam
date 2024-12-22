@@ -48,7 +48,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl mb-8"
           >
-            Votre partenaire de confiance pour l'installation de caméras de sécurité et de climatisation.
+            Votre partenaire de confiance pour l&apos;installation de caméras de sécurité et de climatisation.
           </motion.p>
           
           <motion.div

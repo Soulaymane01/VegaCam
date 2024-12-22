@@ -16,7 +16,7 @@ export function Contact() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contactez-nous</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            N'hésitez pas à nous contacter pour toute question ou demande de devis
+            N&apos;hésitez pas à nous contacter pour toute question ou demande de devis
           </p>
         </motion.div>
 
@@ -72,14 +72,14 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Heures d'ouverture</h3>
+            <h3 className="text-2xl font-semibold mb-6">Heures d&apos;ouverture</h3>
             <div className="space-y-2">
               <p><span className="font-semibold">Lundi - Vendredi:</span> 9h00 - 18h00</p>
               <p><span className="font-semibold">Samedi:</span> 9h00 - 14h00</p>
               <p><span className="font-semibold">Dimanche:</span> Fermé</p>
             </div>
             <p className="mt-6 text-gray-600">
-              Notre équipe est disponible pendant les heures d'ouverture pour répondre à toutes vos questions et vous fournir l'assistance dont vous avez besoin.
+              Notre équipe est disponible pendant les heures d&apos;ouverture pour répondre à toutes vos questions et vous fournir l&apos;assistance dont vous avez besoin.
             </p>
           </motion.div>
         </div>

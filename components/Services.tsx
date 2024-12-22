@@ -39,7 +39,7 @@ export function Services() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Nous fournissons des services d'installation professionnels avec un accent sur la qualité et la fiabilité
+            Nous fournissons des services d&apos;installation professionnels avec un accent sur la qualité et la fiabilité
           </p>
         </motion.div>
 
