@@ -19,14 +19,30 @@ export function Hero() {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         className="absolute inset-0 w-[100%] h-[100vh]"
       >
+        
         <SwiperSlide>
-          <div className="bg-[url('/images/hero-slide-1.png')] bg-cover bg-center w-[100%] h-[100vh]" />
+          <div
+            style={{
+              backgroundImage: `url('${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/hero-slide-1.png')`,
+            }}
+            className="bg-cover bg-center w-[100%] h-[100vh]"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('/images/hero-slide-2.png')] bg-cover bg-center w-[100%] h-[100vh]" />
+          <div
+            style={{
+              backgroundImage: `url('${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/hero-slide-2.png')`,
+            }}
+            className="bg-cover bg-center w-[100%] h-[100vh]"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('/images/hero-slide-3.png')] bg-cover bg-center w-[100%] h-[100vh]" />
+          <div
+            style={{
+              backgroundImage: `url('${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/hero-slide-3.png')`,
+            }}
+            className="bg-cover bg-center w-[100%] h-[100vh]"
+          />
         </SwiperSlide>
       </Swiper>
 

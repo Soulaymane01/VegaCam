@@ -13,13 +13,13 @@ const projects = [
     id: 'climatisation',
     title: "Installation de Système de Climatisation",
     description: "Installation d'un système de climatisation de haute qualité pour assurer votre confort en toutes saisons. Nos experts garantissent une installation professionnelle et fiable, adaptée à vos besoins spécifiques.",
-    images: Array.from({ length: 10 }, (_, i) => `/images/pr1-${i + 1}.jpeg`)
+    images: Array.from({ length: 10 }, (_, i) => `${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/pr1-${i + 1}.jpeg`)
   },
   {
     id: 'armoires',
     title: "Installation des Armoires",
     description: "Nous offrons un service d'installation d'armoires sur mesure, alliant efficacité et précision. Notre équipe assure une pose rapide et soignée, adaptée à vos besoins spécifiques. Contactez-nous pour un devis personnalisé.",
-    images: Array.from({ length: 13 }, (_, i) => `/images/pr2-${i + 1}.jpeg`)
+    images: Array.from({ length: 13 }, (_, i) => `${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/pr2-${i + 1}.jpeg`)
   }
 ]
 
