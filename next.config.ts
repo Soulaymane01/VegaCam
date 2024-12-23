@@ -2,9 +2,10 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  basePath: '/VegaCam',
   output: 'export',
   distDir: 'dist',
+  basePath: '/VegaCam',
+  assetPrefix: '/VegaCam/',
   images : {
     unoptimized:true,
   },
