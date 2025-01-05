@@ -8,10 +8,10 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   distDir: 'dist',
-  basePath: isProd ? '/VegaCam' : '',
-  assetPrefix: isProd ? '/VegaCam/' : '',
+  basePath: isProd ? '' : '',
+  assetPrefix: isProd ? '' : '',
   env: {
-    NEXT_PUBLIC_ASSET_PREFIX: isProd ? '/VegaCam' : '',
+    NEXT_PUBLIC_ASSET_PREFIX: isProd ? '' : '',
   },
   images : {
     unoptimized:true,

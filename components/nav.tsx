@@ -15,7 +15,7 @@ export function Nav() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo-vigacam.jpg"
+              src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/logo-vigacam.jpg`}
               alt="VIGA CAM Logo"
               width={120}
               height={60}
