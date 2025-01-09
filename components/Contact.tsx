@@ -34,6 +34,7 @@ export function Contact() {
                 <div>
                   <p className="font-semibold">Téléphone</p>
                   <a href="tel:0661717248" className="text-gray-600 hover:text-[#0088cc]">0661 717248</a>
+                  <a href="tel:0666130973" className="text-gray-600 hover:text-[#0088cc]">0666 130973</a>
                 </div>
               </div>
               <div className="flex items-center">
