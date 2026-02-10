@@ -28,47 +28,53 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-24 bg-gray-50/50 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Nous fournissons des services d&apos;installation professionnels avec un accent sur la qualité et la fiabilité
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+            Nos <span className="text-primary">Services</span> d&apos;Expertise
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Des solutions sur mesure pour votre sécurité et votre confort, installées par des experts certifiés.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="relative overflow-hidden group hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div 
-                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+              <Card className="h-full border-none shadow-sm hover:shadow-2xl transition-all duration-500 group rounded-3xl overflow-hidden bg-white">
+                <CardHeader className="pb-4">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
                     style={{ backgroundColor: `${service.color}15` }}
                   >
-                    <service.icon 
-                      size={24} 
+                    <service.icon
+                      size={32}
                       style={{ color: service.color }}
                     />
                   </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-2xl font-bold mb-3 transition-colors group-hover:text-primary">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed text-base">
+                    {service.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="link" className="p-0 text-[#0088cc]">
-                    En savoir plus →
+                  <Button variant="link" className="p-0 text-primary font-bold group-hover:translate-x-2 transition-transform">
+                    En savoir plus <span className="ml-2">→</span>
                   </Button>
                 </CardContent>
               </Card>

@@ -25,45 +25,68 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projets" className="py-20 bg-white">
+    <section id="projets" className="py-24 bg-white relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Projets</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Découvrez quelques-uns de nos projets récents
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+            Nos <span className="text-primary">Réalisations</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            Un aperçu de notre savoir-faire à travers nos interventions récentes.
           </p>
         </motion.div>
 
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
+            transition={{ duration: 0.7 }}
+            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 mb-24 items-center`}
           >
-            <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-            <p className="mb-6 text-gray-600">{project.description}</p>
-            <Swiper
-              modules={[Pagination, Navigation]}
-              pagination={{ clickable: true }}
-              navigation
-              className="w-1/2 h-[800px] md:h-[500px] rounded-lg overflow-hidden"
-            >
-              {project.images.map((image, imageIndex) => (
-                <SwiperSlide key={`${project.id}-image-${imageIndex}`}>
-                  <Image src={image} alt={`${project.title} Image ${imageIndex + 1}`} layout="fill" objectFit="cover" />
+            <div className="flex-1 w-full">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-primary/5 rounded-[2rem] blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                <Swiper
+                  modules={[Pagination, Navigation]}
+                  pagination={{ clickable: true }}
+                  navigation
+                  className="w-full aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl relative z-10"
+                >
+                  {project.images.map((image, imageIndex) => (
+                    <SwiperSlide key={`${project.id}-image-${imageIndex}`}>
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={image}
+                          alt={`${project.title} Image ${imageIndex + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-700 hover:scale-105"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
 
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="flex-1 text-left">
+              <div className="max-w-xl">
+                <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">Portfolio</span>
+                <h3 className="text-2xl md:text-4xl font-bold mb-6 text-gray-900">{project.title}</h3>
+                <p className="mb-8 text-gray-600 text-lg leading-relaxed">{project.description}</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-1 bg-primary rounded-full"></div>
+                  <span className="text-primary font-bold">Qualité Certifiée</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>

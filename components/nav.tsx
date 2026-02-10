@@ -10,20 +10,22 @@ export function Nav() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50">
-      <div className="container mx-auto px-4 py-3">
+    <nav className="fixed w-full z-50 transition-all duration-300 glass-morphism border-none shadow-none bg-white/40 backdrop-blur-md">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/logo-vigacam.jpg`}
-              alt="VIGA CAM Logo"
-              width={120}
-              height={60}
-              className="h-12 w-auto"
-            />
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/logo-vigacam.jpg`}
+                alt="VIGA CAM Logo"
+                width={120}
+                height={60}
+                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
           </Link>
-          
-          <div className="hidden md:flex space-x-8">
+
+          <div className="hidden md:flex items-center space-x-10">
             <NavLink href="#accueil">Accueil</NavLink>
             <NavLink href="#services">Services</NavLink>
             <NavLink href="#projets">Projets</NavLink>
@@ -72,9 +74,10 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="text-gray-600 hover:text-[#0088cc] transition-colors duration-200"
+      className="relative text-gray-700 font-medium transition-colors duration-300 hover:text-primary group py-2"
     >
       {children}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
     </Link>
   )
 }
@@ -84,7 +87,7 @@ function MobileNavLink({ href, onClick, children }: { href: string; onClick: () 
     <Link
       href={href}
       onClick={onClick}
-      className="text-gray-600 hover:text-[#0088cc] transition-colors duration-200 block py-2"
+      className="text-gray-800 font-semibold hover:text-primary transition-colors duration-200 block py-4 px-6 rounded-lg hover:bg-primary/10"
     >
       {children}
     </Link>

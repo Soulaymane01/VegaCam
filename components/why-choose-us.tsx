@@ -28,18 +28,20 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Pourquoi nous choisir</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Découvrez ce qui fait de Viga Cam le choix idéal pour vos besoins en sécurité et climatisation
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+            Pourquoi <span className="text-primary">nous choisir</span> ?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            L&apos;excellence technique et le service client sont au cœur de notre engagement quotidien.
           </p>
         </motion.div>
 
@@ -47,15 +49,21 @@ export function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group p-10 rounded-[2rem] bg-gray-50 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-primary/10"
             >
-              <reason.icon className="w-12 h-12 text-[#0088cc] mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-              <p className="text-gray-600">{reason.description}</p>
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                <reason.icon className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors">
+                {reason.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                {reason.description}
+              </p>
             </motion.div>
           ))}
         </div>

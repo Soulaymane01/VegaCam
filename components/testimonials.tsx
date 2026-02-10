@@ -30,54 +30,66 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="temoignages" className="py-24 bg-gray-50/50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ce que disent nos clients</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Découvrez les expériences de nos clients satisfaits
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
+            Ce que disent <span className="text-primary">nos clients</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            La satisfaction de nos clients est notre plus belle récompense.
           </p>
         </motion.div>
 
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          spaceBetween={30}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          spaceBetween={40}
           slidesPerView={1}
           breakpoints={{
-            640: {
+            768: {
               slidesPerView: 2,
             },
-            1024: {
+            1280: {
               slidesPerView: 3,
             },
           }}
+          className="pb-20 !px-4"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-lg"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full"
               >
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-8">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-secondary fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">{testimonial.content}</p>
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+
+                <p className="text-gray-700 italic mb-10 text-lg leading-relaxed flex-grow">
+                  &quot;{testimonial.content}&quot;
+                </p>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary font-bold text-xl uppercase">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                    <p className="text-sm text-primary font-medium">{testimonial.role}</p>
+                  </div>
                 </div>
               </motion.div>
             </SwiperSlide>

@@ -47,37 +47,52 @@ export function Hero() {
       </Swiper>
 
       {/* Content positioned in the center on top */}
-      <div className="absolute  inset-0 flex items-center justify-center z-10 ">
-        <div className="container  mx-auto px-4 text-center text-white bg-[#6C757D80]">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-6xl font-bold mb-4"
+      <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/30">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl mx-auto glass-morphism p-8 md:p-12 text-center rounded-2xl"
           >
-            Bienvenue chez Viga Cam
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8"
-          >
-            Votre partenaire de confiance pour l&apos;installation de caméras de sécurité et de climatisation.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Button
-              size="lg"
-              className="bg-[#0088cc] hover:bg-[#0088cc]/90 text-white"
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-4xl md:text-6xl font-bold mb-6 text-gray-900"
             >
-              Obtenir un devis
-            </Button>
+              Bienvenue chez <span className="text-primary">Viga Cam</span>
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed"
+            >
+              Votre partenaire de confiance pour l&apos;installation de <span className="font-semibold text-primary">caméras de sécurité</span> et de <span className="font-semibold text-secondary">climatisation</span>.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg transition-all hover:scale-105"
+              >
+                Obtenir un devis
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-primary text-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-xl transition-all"
+              >
+                Nos Services
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </div>

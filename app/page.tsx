@@ -1,5 +1,6 @@
 import { Nav } from '@/components/nav'
 import { Hero } from '@/components/Hero'
+import { About } from '@/components/About'
 import { Services } from '@/components/Services'
 import { WhyChooseUs } from '@/components/why-choose-us'
 import { OurProcess } from '@/components/our-process'
@@ -15,6 +16,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <About />
       <Services />
       <WhyChooseUs />
       <OurProcess />

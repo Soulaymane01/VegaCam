@@ -4,15 +4,15 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 20% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 201 100% 40%;
+    --primary: 201 100% 36%; /* #0077B6 */
     --primary-foreground: 210 40% 98%;
-    --secondary: 28 100% 50%;
+    --secondary: 35 100% 55%; /* #FF9F1C */
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -22,8 +22,8 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 100% 40%;
-    --radius: 0.5rem;
+    --ring: 201 100% 36%;
+    --radius: 0.75rem;
   }
 }
  
@@ -32,16 +32,41 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ffffff !important;
+  @apply scale-75 md:scale-100 transition-transform hover:scale-110;
+  color: white !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #ffffff !important;
+  background-color: white !important;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
